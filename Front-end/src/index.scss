@@ -1,0 +1,205 @@
+@use '@carbon/styles/scss/components/combo-box';
+@use '@carbon/styles/scss/components/button';
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+$border-color: #808080;
+$shadow-color: #808080;
+$font-family: 'Roboto', sans-serif;
+$width: 600px;
+
+@mixin flex-column-align-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin flex-justify-center {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin border {
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    box-shadow: 0px 3px 10px $shadow-color;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    @include flex-column-align-center;
+}
+
+#root {
+    font-family: $font-family;
+    padding: 20px 0;
+    @include flex-column-align-center;
+}
+
+.header {
+    margin: 10px 0;
+    width: $width;
+}
+
+.combo-box-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: $width;
+}
+
+.combo-box-input {
+    margin-bottom: 20px;
+}
+
+.most-viewed-cities {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    button {
+        background-color: #efa850;
+        font-size: 18px;
+        border-radius: 5px;
+        padding: 15px 30px;
+    }
+
+    button:hover {
+        background-color: #d38930;
+    }
+}
+
+.current-weather-card {
+    @include flex-justify-center;
+    align-items: stretch;
+    @include border;
+    gap: 40px;
+    margin-bottom: 20px;
+    padding: 20px;
+    width: $width;
+
+    div {
+        display: flex;
+    }
+
+    >div {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+.place-name {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.forecast-condition-image {
+    width: 40%;
+}
+
+.five-day-forecast-container {
+    @include flex-justify-center;
+    gap: 20px;
+    max-width: 1000px;
+}
+
+.forecast-card {
+    @include flex-column-align-center;
+    gap: 10px;
+    @include border;
+    padding: 30px;
+    width: 18%;
+
+    h3 {
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .forecast-card-date {
+        @include flex-column-align-center;
+        width: 37%;
+    }
+
+    .forecast-card-temperature-data {
+        @include flex-column-align-center;
+    }
+}
+
+.current-temperature-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.current-temperature {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.temperature {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@media (max-width: 1024px) {
+    .five-day-forecast-container {
+        flex-direction: column;
+        width: $width;
+    }
+
+    .forecast-card {
+        width: 100%;
+        flex-direction: row;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 767px) {
+    .current-weather-container {
+        @include flex-column-align-center;
+        width: 100%;
+    }
+
+    .header {
+        width: 90%;
+    }
+
+    .five-day-forecast-container {
+        width: 90%;
+    }
+
+    .combo-box-container {
+        width: 90%;
+    }
+
+    .most-viewed-cities {
+        button {
+            padding: 10px;
+        }
+    }
+
+    .current-weather-card {
+        gap: 10px;
+        font-size: 14px;
+        width: 90%;
+
+        :first-child {
+            width: 80%;
+        }
+    }
+
+    .current-temperature-container {
+        gap: 10px;
+    }
+
+    .current-temperature,
+    .place-name {
+        font-size: 20px;
+    }
+}
