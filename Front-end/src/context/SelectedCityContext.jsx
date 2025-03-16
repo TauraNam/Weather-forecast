@@ -9,7 +9,7 @@ export const SelectedCitiesProvider = ({ children }) => {
         <SelectedCityContext.Provider value={{ selectedCity, setSelectedCity }}>
             {children}
         </SelectedCityContext.Provider>
-    );
+    )
 }
 
 export const useSelectedCityContext = () => useContext(SelectedCityContext)

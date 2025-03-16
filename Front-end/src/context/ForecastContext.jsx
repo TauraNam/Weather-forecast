@@ -7,7 +7,6 @@ export const ForecastProvider = ({ children }) => {
     const [forecast, setForecast] = React.useState()
     const { selectedCity } = useSelectedCityContext()
 
-
     const getForecast = async () => {
         try {
             const response = await fetch('http://localhost:3000/api/forecast/' + selectedCity)

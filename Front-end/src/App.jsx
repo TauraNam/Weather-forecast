@@ -7,19 +7,19 @@ import { SelectedCitiesProvider } from "./context/SelectedCityContext"
 
 function App() {
 
-  return (
-    <>
-      <CitiesProvider>
-        <SelectedCitiesProvider>
-          <ForecastProvider>
-          <CitiesDropdown />
-          <CurrentWeatherCard />
-          <FiveDayForecast />
-          </ForecastProvider>
-        </SelectedCitiesProvider>
-      </CitiesProvider>
-    </>
-  )
+    return (
+        <>
+            <CitiesProvider>
+                <SelectedCitiesProvider>
+                    <ForecastProvider>
+                        <CitiesDropdown />
+                        <CurrentWeatherCard />
+                        <FiveDayForecast />
+                    </ForecastProvider>
+                </SelectedCitiesProvider>
+            </CitiesProvider>
+        </>
+    )
 }
 
 export default App
