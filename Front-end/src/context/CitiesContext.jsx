@@ -1,9 +1,9 @@
-import { createContext, useContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useEffect } from 'react'
 
 const CitiesContext = createContext(null)
 
 export const CitiesProvider = ({ children }) => {
-    const [cities, setCities] = useState([])
+    const [cities, setCities] = React.useState([])
 
     const getCities = async () => {
         try {
@@ -35,4 +35,4 @@ export const CitiesProvider = ({ children }) => {
     );
 }
 
-export const useCitiesContext = () => useContext(CitiesContext);
+export const useCitiesContext = () => useContext(CitiesContext)
